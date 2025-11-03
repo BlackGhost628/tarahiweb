@@ -1,0 +1,379 @@
+/*@import url(dark.css);
+@import url(light.css);
+
+body {
+  direction: rtl;
+  font-family: "Vazir", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--md-sys-color-background);
+  color:var(--md-sys-color-on-background);
+  line-height: 1.8;
+}
+
+
+header {
+  background-color: var();
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+nav {
+  background-color: #ffd3b6;
+  text-align: center;
+  padding: 12px;
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+}
+
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #ff4800;
+}
+
+form {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 360px;
+  width: 90%;
+  margin: 30px auto;
+}
+
+form h2 {
+  margin-bottom: 15px;
+  color: #ff6b35;
+  text-align: center;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  background: #ff6b35;
+  color: white;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #e05b2a;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+a {
+  color: #0078d4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+p {
+  font-size: 17px;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+strong {
+  color: #ff6b35;
+}
+
+
+footer {
+  background-color: #ff914d;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px;
+}
+
+.member-card {
+  width: 230px;
+  text-align: center;
+  background: rgba(255,255,255,0.85);
+  border-radius: 20px;
+  padding: 25px 15px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+  transition: transform .2s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-7px);
+}
+
+.member-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #ff914d;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
+  margin-bottom: 12px;
+}
+
+.member-card h2 {
+  font-size: 18px;
+  color: #ff4800;
+  margin: 8px 0 4px;
+}
+
+.member-card p {
+  font-size: 14px;
+  color: #444;
+  margin: 0;
+}
+*/
+@import url(dark.css);
+@import url(light.css);
+
+body {
+  direction: rtl;
+  font-family: "Vazir", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  line-height: 1.8;
+}
+
+/* =========================
+   Header
+========================= */
+header {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  text-align: center;
+  padding: 20px 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* =========================
+   Navigation
+========================= */
+nav {
+  background-color: var(--md-sys-color-secondary-container);
+  text-align: center;
+  padding: 12px;
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+}
+
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: var(--md-sys-color-on-secondary-container);
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--md-sys-color-tertiary);
+}
+
+/* =========================
+   Forms
+========================= */
+form {
+  background: var(--md-sys-color-surface-container);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 360px;
+  width: 90%;
+  margin: 30px auto;
+}
+
+form h2 {
+  margin-bottom: 15px;
+  color: var(--md-sys-color-primary);
+  text-align: center;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: var(--md-sys-color-primary-container);
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: var(--md-sys-color-on-surface);
+}
+
+a {
+  color: var(--md-sys-color-tertiary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Main content
+========================= */
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  background: var(--md-sys-color-surface-container);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+p {
+  font-size: 17px;
+  margin-bottom: 18px;
+  text-align: justify;
+  color: var(--md-sys-color-on-surface);
+}
+
+strong {
+  color: var(--md-sys-color-primary);
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  background-color: var(--md-sys-color-tertiary-container);
+  color: var(--md-sys-color-on-tertiary-container);
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+/* =========================
+   Team Section
+========================= */
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px;
+}
+
+.member-card {
+  width: 230px;
+  text-align: center;
+  background: var(--md-sys-color-surface-container-high);
+  border-radius: 20px;
+  padding: 25px 15px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+  transition: transform .2s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-7px);
+}
+
+.member-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--md-sys-color-primary);
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
+  margin-bottom: 12px;
+}
+
+.member-card h2 {
+  font-size: 18px;
+  color: var(--md-sys-color-primary);
+  margin: 8px 0 4px;
+}
+
+.member-card p {
+  font-size: 14px;
+  color: var(--md-sys-color-on-surface);
+  margin: 0;
+}

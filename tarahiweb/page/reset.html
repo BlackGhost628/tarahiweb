@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>بازیابی رمز عبور</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="dark">
+<main>
+  <!-- 🔹 فرم بازیابی رمز -->
+  <form action="login.html" method="POST">
+    <h2>بازیابی رمز عبور</h2>
+
+    <!-- 🔒 رمز جدید -->
+    <label>رمز جدید:</label>
+    <input type="password" name="new_password" required minlength="8">
+
+    <!-- 🔁 تکرار رمز -->
+    <label>تکرار رمز جدید:</label>
+    <input type="password" name="confirm_password" required>
+
+    <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+    <button type="submit">ذخیره رمز جدید</button>
+  </form>
+</main>
+</body>
+</html>
