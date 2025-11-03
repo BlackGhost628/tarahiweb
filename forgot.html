@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>فراموشی رمز عبور</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="dark">
+<main>
+
+  <form action="otp.html" method="POST">
+    <h2>فراموشی رمز عبور</h2>
+    <label>ایمیل یا شماره تلفن:</label>
+    <input type="text" name="email_or_phone" required>
+    <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+    <button type="submit">ارسال کد تأیید</button>
+    <p><a href="login.html">بازگشت به ورود</a></p>
+  </form>
+</main>
+</body>
+</html>
