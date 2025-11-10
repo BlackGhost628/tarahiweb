@@ -2,16 +2,43 @@
 <html lang="fa">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>تأیید کد OTP</title>
-  <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="dark">
-<form action="/verify-otp" method="POST">
-  <h2>کد تأیید را وارد کنید</h2>
-  <label>کد ۶ رقمی:</label>
-  <input type="number" name="otp" required minlength="6" maxlength="6">
-  <input type="hidden" name="csrf_token" value="{{csrf_token}}">
-  <button type="submit">تأیید</button>
-</form>
+<body class="light">
+
+<header>
+  <h1>FoodEase</h1>
+</header>
+
+<nav class="main-menu">
+  <ul>
+    <li><a href="index.html">صفحه اصلی</a></li>
+    <li><a href="menu.html">منوی غذا</a></li>
+    <li><a href="cart.html">سبد خرید</a></li>
+    <li><a href="ma.html">درباره ما</a></li>
+    <li><a href="team.html">تیم ما</a></li>
+    <li><a href="contact.html">تماس با ما</a></li>
+  </ul>
+</nav>
+
+<main>
+  <form action="/verify-otp" method="POST">
+    <h2>کد تأیید را وارد کنید</h2>
+
+    <label>کد ۶ رقمی:</label>
+    <input type="text" name="otp" required pattern="\d{6}" maxlength="6">
+
+    <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+
+    <button type="submit">تأیید</button>
+  </form>
+</main>
+
+<footer>
+  © 2025 FoodEase
+</footer>
+
 </body>
 </html>

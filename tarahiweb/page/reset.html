@@ -2,27 +2,45 @@
 <html lang="fa">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>بازیابی رمز عبور</title>
-  <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
+<body class="light">
+<header>
+  <h1>FoodEase</h1>
+</header>
 
-<body class="dark">
+<nav class="main-menu">
+  <ul>
+    <li><a href="index.html">صفحه اصلی</a></li>
+    <li><a href="menu.html">منوی غذا</a></li>
+    <li><a href="cart.html">سبد خرید</a></li>
+    <li><a href="ma.html">درباره ما</a></li>
+    <li><a href="team.html">تیم ما</a></li>
+    <li><a href="contact.html">تماس با ما</a></li>
+  </ul>
+</nav>
+
 <main>
-  <!-- 🔹 فرم بازیابی رمز -->
   <form action="login.html" method="POST">
     <h2>بازیابی رمز عبور</h2>
 
-    <!-- 🔒 رمز جدید -->
     <label>رمز جدید:</label>
     <input type="password" name="new_password" required minlength="8">
 
-    <!-- 🔁 تکرار رمز -->
     <label>تکرار رمز جدید:</label>
     <input type="password" name="confirm_password" required>
 
     <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+
     <button type="submit">ذخیره رمز جدید</button>
   </form>
 </main>
+
+<footer>
+  © 2025 FoodEase
+</footer>
+
 </body>
 </html>

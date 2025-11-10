@@ -2,38 +2,52 @@
 <html lang="fa">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ورود به FoodEase</title>
-  <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
+<body class="light">
 
-<body class="dark">
+<header>
+  <h1>FoodEase</h1>
+</header>
+
+<nav class="main-menu">
+  <ul>
+    <li><a href="index.html">صفحه اصلی</a></li>
+    <li><a href="menu.html">منوی غذا</a></li>
+    <li><a href="cart.html">سبد خرید</a></li>
+    <li><a href="ma.html">درباره ما</a></li>
+    <li><a href="team.html">تیم ما</a></li>
+    <li><a href="contact.html">تماس با ما</a></li>
+    <li><a href="login.html"></a>ورود</li>
+  </ul>
+</nav>
+
 <main>
-  <!-- 🔹 فرم ورود -->
   <form action="dashboard.html" method="POST" autocomplete="off">
     <h2>ورود به FoodEase</h2>
 
-    <!-- 📧 ایمیل یا شماره -->
     <label for="email">ایمیل یا شماره تلفن:</label>
     <input type="text" id="email" name="email" required>
 
-    <!-- 🔒 رمز عبور -->
     <label for="password">رمز عبور:</label>
     <input type="password" id="password" name="password" minlength="8" required>
 
-    <!-- ☑️ مرا به خاطر بسپار -->
     <label><input type="checkbox" name="remember"> مرا به خاطر بسپار</label>
 
-    <!-- 🛡️ توکن CSRF -->
     <input type="hidden" name="csrf_token" value="{{csrf_token}}">
 
-    <!-- ▶️ دکمه ورود -->
     <button type="submit">ورود</button>
 
     <p><a href="forgot.html">فراموشی رمز عبور؟</a></p>
     <p>کاربر جدید هستید؟ <a href="signup.html">ثبت‌نام</a></p>
-      <br>
-  <p><a href="ma.html">درباره ما؟</a></p>
   </form>
 </main>
+
+<footer>
+  © 2025 FoodEase
+</footer>
+
 </body>
 </html>
