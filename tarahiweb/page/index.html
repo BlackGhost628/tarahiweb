@@ -8,47 +8,60 @@
 </head>
 <body class="light">
 
-<header>
-  <h1>FoodEase</h1>
+<header class="site-header">
+  <div class="logo">
+    <img src="../image/logo.png" alt="FoodEase Logo" width="50" height="50">
+  </div>
+  <nav class="main-menu">
+    <ul>
+      <li><a href="index.html" class="active">صفحه اصلی</a></li>
+      <li><a href="menu.html">منوی غذا</a></li>
+      <li><a href="cart.html">سبد خرید</a></li>
+      <li><a href="ma.html">درباره ما</a></li>
+      <li><a href="team.html">تیم ما</a></li>
+      <li><a href="contact.html">تماس با ما</a></li>
+    </ul>
+  </nav>
 </header>
 
-<nav class="main-menu">
-  <ul>
-    <li><a href="index.html" class="active">صفحه اصلی</a></li>
-    <li><a href="menu.html">منوی غذا</a></li>
-    <li><a href="cart.html">سبد خرید</a></li>
-    <li><a href="ma.html">درباره ما</a></li>
-    <li><a href="team.html">تیم ما</a></li>
-    <li><a href="contact.html">تماس با ما</a></li>
-  </ul>
-</nav>
-
 <main>
-  <h2>منوی غذا</h2>
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="../image/pizza.jpg" alt="پیتزا">
-      <h3>پیتزا مخصوص</h3>
-      <p>قیمت: 150,000 تومان</p>
-      <button>افزودن به سبد خرید</button>
+  <section class="welcome-section">
+    <h2>به FoodEase خوش آمدید!</h2>
+    <p>FoodEase بهترین تجربه سفارش آنلاین غذا را برای شما فراهم می‌کند. منوی ما شامل غذاهای متنوع با کیفیت بالا و قیمت مناسب است.</p>
+  </section>
+
+  <section class="menu-section">
+    <h2>منوی نمونه</h2>
+    <div class="menu-container">
+      <article class="menu-item">
+        <img src="../image/pizza.jpg" alt="پیتزا">
+        <h3>پیتزا مخصوص</h3>
+        <p>قیمت: 150,000 تومان</p>
+        <button>افزودن به سبد خرید</button>
+      </article>
+      <article class="menu-item">
+        <img src="../image/kebab.jpg" alt="کباب">
+        <h3>کباب ایرانی</h3>
+        <p>قیمت: 120,000 تومان</p>
+        <button>افزودن به سبد خرید</button>
+      </article>
+      <article class="menu-item">
+        <img src="../image/salad.jpg" alt="سالاد">
+        <h3>سالاد فصل</h3>
+        <p>قیمت: 50,000 تومان</p>
+        <button>افزودن به سبد خرید</button>
+      </article>
     </div>
-    <div class="menu-item">
-      <img src="../image/kebab.jpg" alt="کباب">
-      <h3>کباب ایرانی</h3>
-      <p>قیمت: 120,000 تومان</p>
-      <button>افزودن به سبد خرید</button>
-    </div>
-    <div class="menu-item">
-      <img src="../image/salad.jpg" alt="سالاد">
-      <h3>سالاد فصل</h3>
-      <p>قیمت: 50,000 تومان</p>
-      <button>افزودن به سبد خرید</button>
-    </div>
-  </div>
+  </section>
 </main>
 
-<footer>
-  © 2025 FoodEase
+<footer class="site-footer">
+  <div class="footer-info">
+    <p>© 2025 FoodEase</p>
+    <p>ایران، اصفهان - تلفن: 031-35289966</p>
+  </div>
+  <div class="footer-links">
+  </div>
 </footer>
 
 </body>

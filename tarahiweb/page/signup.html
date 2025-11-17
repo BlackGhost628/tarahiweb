@@ -8,50 +8,58 @@
 </head>
 <body class="light">
 
-<header>
-  <h1>FoodEase</h1>
+<header class="site-header">
+  <div class="logo">
+    <img src="../image/logo.png" alt="FoodEase Logo" width="50" height="50">
+  </div>
+
+  <nav class="main-menu">
+    <ul>
+      <li><a href="index.html">صفحه اصلی</a></li>
+      <li><a href="menu.html">منوی غذا</a></li>
+      <li><a href="cart.html">سبد خرید</a></li>
+      <li><a href="ma.html">درباره ما</a></li>
+      <li><a href="team.html">تیم ما</a></li>
+      <li><a href="contact.html">تماس با ما</a></li>
+    </ul>
+  </nav>
 </header>
 
-<nav class="main-menu">
-  <ul>
-    <li><a href="index.html">صفحه اصلی</a></li>
-    <li><a href="menu.html">منوی غذا</a></li>
-    <li><a href="cart.html">سبد خرید</a></li>
-    <li><a href="ma.html">درباره ما</a></li>
-    <li><a href="team.html">تیم ما</a></li>
-    <li><a href="contact.html">تماس با ما</a></li>
-  </ul>
-</nav>
 
 <main>
   <form action="otp.html" method="POST" autocomplete="off">
     <h2>ثبت‌نام در FoodEase</h2>
 
-    <label>نام کامل:</label>
-    <input type="text" name="fullname" required pattern="^[\u0600-\u06FF\s]+$" title="فقط حروف فارسی">
+    <label for="fullname">نام کامل:</label>
+    <input type="text" id="fullname" name="fullname" required 
+           pattern="^[\u0600-\u06FF\s]+$" title="فقط حروف فارسی">
 
-    <label>ایمیل:</label>
-    <input type="email" name="email" required>
+    <label for="email">ایمیل:</label>
+    <input type="email" id="email" name="email" required>
 
-    <label>شماره تلفن:</label>
-    <input type="tel" name="phone" required pattern="^09\d{9}$" title="شماره معتبر ایرانی وارد کنید">
+    <label for="phone">شماره تلفن:</label>
+    <input type="tel" id="phone" name="phone" required 
+           pattern="^09\d{9}$" title="شماره معتبر ایرانی وارد کنید">
 
-    <label>رمز عبور:</label>
-    <input type="password" name="password" required minlength="8">
+    <label for="password">رمز عبور:</label>
+    <input type="password" id="password" name="password" required minlength="8">
 
-    <label>تکرار رمز عبور:</label>
-    <input type="password" name="confirm_password" required>
+    <label for="confirm">تکرار رمز عبور:</label>
+    <input type="password" id="confirm" name="confirm_password" required>
 
-    <label><input type="checkbox" name="terms" required> قوانین را می‌پذیرم</label>
+    <label class="checkbox">
+      <input type="checkbox" name="terms" required> قوانین را می‌پذیرم
+    </label>
 
     <input type="hidden" name="csrf_token" value="{{csrf_token}}">
 
     <button type="submit">ثبت‌نام</button>
+
     <p>اکانت دارید؟ <a href="login.html">ورود</a></p>
   </form>
 </main>
 
-<footer>
+<footer class="site-footer">
   © 2025 FoodEase
 </footer>
 
