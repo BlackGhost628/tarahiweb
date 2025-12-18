@@ -3,47 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تأیید کد OTP</title>
+<title>تأیید کد</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body class="light">
 
 <header class="site-header">
   <div class="logo">
-    <img src="../image/logo.png" alt="FoodEase Logo" width="50" height="50">
-    <h1>FoodEase</h1>
+    <img src="../image/logo.png" alt="FoodEase Logo">
   </div>
-
-  <nav class="main-menu">
-    <ul>
-      <li><a href="index.html">صفحه اصلی</a></li>
-      <li><a href="menu.html">منوی غذا</a></li>
-      <li><a href="cart.html">سبد خرید</a></li>
-      <li><a href="ma.html">درباره ما</a></li>
-      <li><a href="team.html">تیم ما</a></li>
-      <li><a href="contact.html">تماس با ما</a></li>
-    </ul>
-  </nav>
 </header>
 
 <main>
-  <section class="otp-section">
-    <form action="/verify-otp" method="POST">
-      <h2>کد تأیید را وارد کنید</h2>
+  <div class="md-card md-card-elevated" style="max-width:420px;margin:40px auto;padding:30px;">
+    <h2 style="text-align:center;">کد تأیید</h2>
 
-      <label for="otp">کد ۶ رقمی:</label>
-      <input type="text" id="otp" name="otp" required pattern="\d{6}" maxlength="6">
+    <form action="login.html">
+      <label>کد ۶ رقمی</label>
+      <input type="text" maxlength="6" required>
 
-      <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+      <div style="text-align:center;margin-top:16px;">
+        <button class="md-btn md-filled md-md">تأیید</button>
+      </div>
 
-      <button class="btn-primary-sm" type="submit">تأیید</button>
+      <p style="text-align:center;">
+        <a href="login.html" class="md-btn md-text md-sm">بازگشت</a>
+      </p>
     </form>
-  </section>
+  </div>
 </main>
 
-<footer class="site-footer">
-  © 2025 FoodEase
-</footer>
-
+<footer class="site-footer">© 2025 FoodEase</footer>
 </body>
 </html>

@@ -30,18 +30,62 @@ header {
   position: relative; /* برای قرار دادن لوگو سمت چپ */
 }
 
+
+
 /* لوگو در سمت چپ */
 .site-header .logo {
   position: absolute;
   left: 30px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  border-radius: 50%;        /* دایره واقعی */
+  overflow: hidden;          /* برش تصویر */
 }
 
 .site-header .logo img {
   width: 110px;
   height: 110px;
+  object-fit: contain; 
+  border-radius: 50%;
+  border: 2px solid var(--md-sys-color-primary);
+  background-color: var(--md-sys-color-surface);
+}
+
+
+/* =========================
+   Product Grid
+========================= */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.product-card {
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  margin: 8px 0 4px;
+}
+
+.product-card .price {
+  display: block;
+  margin: 10px 0;
+  font-weight: 700;
+  color: var(--md-sys-color-secondary);
 }
 
 /* منوی اصلی در وسط */
@@ -303,6 +347,169 @@ footer {
   color: var(--md-sys-color-on-surface);
   font-weight: 500;
 }
+
+
+/* =========================
+   Material Buttons
+========================= */
+
+.md-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;      /* کاملا گرد */
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+
+  border: none;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              box-shadow 0.2s ease,
+              border-color 0.2s ease;
+}
+
+
+/* Button styles */
+.md-filled {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.md-outlined {
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  border: 2px solid var(--md-sys-color-outline);
+}
+
+.md-tonal {
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.md-elevated {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-primary);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.md-text {
+  background: transparent;
+  color: var(--md-sys-color-primary);
+}
+
+/* Button sizes */
+.md-xs { padding: 4px 10px; font-size: 0.7rem; }
+.md-sm { padding: 6px 14px; font-size: 0.8rem; }
+.md-md { padding: 8px 22px; font-size: 0.9rem; }
+.md-lg { padding: 12px 28px; font-size: 1rem; }
+.md-xl { padding: 16px 36px; font-size: 1.1rem; }
+
+/* =========================
+   Material Cards
+========================= */
+
+.md-card {
+  border-radius: 18px;
+  padding: 20px;
+  background-color: var(--md-sys-color-surface-container);
+}
+
+.md-card-filled {
+  background-color: var(--md-sys-color-surface-container-high);
+}
+
+
+.md-card-outlined {
+  background-color: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+.md-card-elevated {
+  background-color: var(--md-sys-color-surface-container);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.12),
+    0 6px 10px rgba(0,0,0,0.16);
+}
+
+/* =========================
+   Material Table
+========================= */
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.md-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.md-table thead {
+  background-color: var(--md-sys-color-surface-container-high);
+}
+
+.md-table th,
+.md-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--md-sys-color-outline);
+}
+
+.md-table th {
+  font-weight: 700;
+  color: var(--md-sys-color-primary);
+}
+
+.md-table tbody tr {
+  background-color: var(--md-sys-color-surface);
+}
+
+/* Thumbnail image */
+.md-table .thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* جدول سبد خرید */
+.cart-table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 12px 8px;
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+.cart-table th {
+  background-color: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-primary);
+}
+
+.cart-thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-table input[type="number"] {
+  width: 60px;
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid var(--md-sys-color-outline);
+  text-align: center;
+}
+
+
 
 @media (max-width: 768px) {
   nav.main-menu {

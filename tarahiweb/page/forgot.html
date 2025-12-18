@@ -3,46 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>فراموشی رمز عبور - FoodEase</title>
+<title>فراموشی رمز عبور</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body class="light">
 
-<header class="site-header">
-    <div class="logo">
-    <img src="../image/logo.png" alt="FoodEase Logo" width="50" height="50">
-  </div>
-  <nav class="main-menu">
-    <ul>
-      <li><a href="index.html">صفحه اصلی</a></li>
-      <li><a href="menu.html">منوی غذا</a></li>
-      <li><a href="cart.html">سبد خرید</a></li>
-      <li><a href="ma.html">درباره ما</a></li>
-      <li><a href="team.html">تیم ما</a></li>
-      <li><a href="contact.html">تماس با ما</a></li>
-    </ul>
-  </nav>
-</header>
-
-
 <main>
-  <section class="password-reset-section">
-    <h2>فراموشی رمز عبور</h2>
-    <form action="otp.html" method="POST">
-      <label for="email_or_phone">ایمیل یا شماره تلفن:</label>
-      <input type="text" id="email_or_phone" name="email_or_phone" required>
+  <div class="md-card md-card-elevated" style="max-width:420px;margin:60px auto;">
+    <h2 style="text-align:center;">فراموشی رمز عبور</h2>
 
-      <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+    <form action="otp.html">
+      <label>ایمیل یا شماره</label>
+      <input type="text" required>
 
-      <button class="btn-primary-sm" type="submit">ارسال کد تأیید</button>
-      <p><a href="login.html">بازگشت به ورود</a></p>
+      <div style="text-align:center;margin-top:16px;">
+        <button class="md-btn md-filled md-md">ارسال کد</button>
+      </div>
+
+      <p style="text-align:center;">
+        <a href="login.html" class="md-btn md-text md-sm">بازگشت به ورود</a>
+      </p>
     </form>
-  </section>
+  </div>
 </main>
-
-<footer class="site-footer">
-  <p>© 2025 FoodEase</p>
-</footer>
 
 </body>
 </html>
