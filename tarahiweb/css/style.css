@@ -9,6 +9,17 @@ body {
   background: var(--md-sys-color-background);
   color: var(--md-sys-color-on-background);
   line-height: 1.8;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+
+* {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
 }
 
 header {
@@ -370,8 +381,43 @@ footer {
               border-color 0.2s ease;
 }
 
+.md-round {
+  border-radius: 999px; /* کاملاً گرد */
+}
 
-/* Button styles */
+.md-square {
+  border-radius: 4px;
+}
+
+.md-enabled {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.md-disabled {
+  background-color: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+.md-hover:hover {
+  background-color: #ff0505;
+}
+
+.md-focus:focus {
+  box-shadow: 0 0 0 11px rgba(255, 1, 1, 0.3);
+}
+
+.md-pressed:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2) inset;
+}
+
+
+
+
 .md-filled {
   background-color: var(--md-sys-color-primary);
   color: var(--md-sys-color-on-primary);
@@ -399,22 +445,39 @@ footer {
   color: var(--md-sys-color-primary);
 }
 
-/* Button sizes */
+
 .md-xs { padding: 4px 10px; font-size: 0.7rem; }
 .md-sm { padding: 6px 14px; font-size: 0.8rem; }
-.md-md { padding: 8px 22px; font-size: 0.9rem; }
+.md-md { padding: 8px 22px; font-size: 1rem; }
 .md-lg { padding: 12px 28px; font-size: 1rem; }
 .md-xl { padding: 16px 36px; font-size: 1.1rem; }
 
-/* =========================
-   Material Cards
-========================= */
 
 .md-card {
   border-radius: 18px;
   padding: 20px;
   background-color: var(--md-sys-color-surface-container);
 }
+
+.md-card-enabled {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.md-card-hover:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transform: translateY(-2px);
+}
+
+.md-card-focus:focus-within {
+  outline: 3px solid rgba(238, 0, 0, 0.4);
+}
+
+.md-card-pressed:active {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3) inset;
+  transform: scale(0.98);
+}
+
+
 
 .md-card-filled {
   background-color: var(--md-sys-color-surface-container-high);
@@ -449,7 +512,7 @@ footer {
 
 .md-table thead {
   background-color: var(--md-sys-color-surface-container-high);
-}
+} 
 
 .md-table th,
 .md-table td {
@@ -486,8 +549,10 @@ footer {
 .cart-table th,
 .cart-table td {
   padding: 12px 8px;
-  border: 1px solid var(--md-sys-color-outline);
+  border: 1px solid var(--md-sys-color-on-primary-container);
 }
+
+
 
 .cart-table th {
   background-color: var(--md-sys-color-surface-container);
@@ -511,6 +576,138 @@ footer {
 
 
 
+
+.badge-container {
+  position: relative;
+  display: inline-block;
+}
+
+.md-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+
+  background-color: var(--md-sys-color-error);
+  color: var(--md-sys-color-on-error);
+
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.md-badge-small {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.md-badge-large {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  font-size: 12px;
+  border-radius: 999px;
+}
+
+.cart-icon img {
+  cursor: pointer;
+}
+
+#terms{
+    accent-color: #FF385C;
+}
+
+/* ===== Icon Button ===== */
+.md-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--md-sys-color-primary);
+  transition: background-color 0.2s ease;
+}
+
+.md-icon-btn:hover {
+  background-color: var(--md-sys-color-secondary-container);
+}
+
+/* ===== FAB ===== */
+.md-fab {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* ===== Checkbox & Radio ===== */
+
+.md-check,
+.md-radio {
+  accent-color: var(--md-sys-color-primary);
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.md-check:disabled,
+.md-radio:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ===== Material Text Field ===== */
+
+.md-textfield {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--md-sys-color-outline);
+  background-color: var(--md-sys-color-surface);
+  font-size: 15px;
+}
+
+.md-textfield:focus {
+  outline: none;
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 2px rgba(255,0,0,0.15);
+}
+
+/* ===== Like Button Animation ===== */
+
+.like-btn .heart-icon {
+  font-size: 22px;
+  line-height: 1;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.like-btn.liked .heart-icon {
+  color: #FF385C;
+}
+
+.like-pop {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+
 @media (max-width: 768px) {
   nav.main-menu {
     flex-direction: column;
@@ -522,3 +719,5 @@ footer {
     align-items: center;
   }
 }
+
+

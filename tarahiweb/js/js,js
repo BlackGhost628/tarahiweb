@@ -1,0 +1,7 @@
+let cartCount = 0;
+const badge = document.getElementById("cartBadge");
+
+function addToCart() {
+  cartCount++;
+  badge.textContent = cartCount;
+}

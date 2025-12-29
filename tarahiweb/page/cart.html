@@ -13,13 +13,13 @@
   <div class="logo">
     <img src="../image/logo.png" alt="FoodEase Logo">
   </div>
+
   <nav class="main-menu">
     <ul>
       <li><a href="index.html">صفحه اصلی</a></li>
       <li><a href="products.html">منوی غذا</a></li>
       <li><a href="cart.html" class="active">سبد خرید</a></li>
       <li><a href="ma.html">درباره ما</a></li>
-      <li><a href="team.html">تیم ما</a></li>
       <li><a href="contact.html">تماس با ما</a></li>
     </ul>
   </nav>
@@ -27,16 +27,26 @@
 
 <main>
 
-<section class="md-card md-card-elevated" style="max-width:1000px;margin:40px auto;padding:24px;">
-  <h2 style="text-align:center;margin-bottom:24px;">سبد خرید شما</h2>
+<section class="md-card md-card-elevated"
+         style="max-width:1000px;margin:40px auto;padding:24px;">
+
+  <h2 style="text-align:center;margin-bottom:24px;">
+    🛒 سبد خرید شما
+  </h2>
+
+  <!-- پیام سبد خالی -->
+  <p id="emptyCart"
+     style="text-align:center;display:none;">
+    سبد خرید شما خالی است
+  </p>
 
   <div class="table-wrapper">
-    <table class="md-table">
+    <table class="md-table" id="cartTable">
       <thead>
         <tr>
           <th>تصویر</th>
           <th>محصول</th>
-          <th>قیمت واحد (تومان)</th>
+          <th>قیمت واحد</th>
           <th>تعداد</th>
           <th>قیمت کل</th>
           <th>عملیات</th>
@@ -44,33 +54,41 @@
       </thead>
 
       <tbody>
-        <tr>
-          <td>
-            <img src="../image/pizza.jpg" class="thumb" alt="پیتزا مخصوص">
-          </td>
+        <tr data-price="150000">
+          <td><img src="../image/pizza.jpg" class="thumb"></td>
           <td>پیتزا مخصوص</td>
           <td>150,000</td>
           <td>
-            <input type="number" value="1" min="1" style="width:60px;">
+            <input type="number"
+                   value="1"
+                   min="1"
+                   onchange="updateRow(this)">
           </td>
-          <td>150,000</td>
+          <td class="row-total">150,000</td>
           <td>
-            <button class="md-btn md-text md-sm">حذف</button>
+            <button class="md-btn md-text md-sm"
+                    onclick="removeRow(this)">
+              حذف
+            </button>
           </td>
         </tr>
 
-        <tr>
-          <td>
-            <img src="../image/kebab.jpg" class="thumb" alt="کباب ایرانی">
-          </td>
+        <tr data-price="120000">
+          <td><img src="../image/kabbab.jpg" class="thumb"></td>
           <td>کباب ایرانی</td>
           <td>120,000</td>
           <td>
-            <input type="number" value="2" min="1" style="width:60px;">
+            <input type="number"
+                   value="2"
+                   min="1"
+                   onchange="updateRow(this)">
           </td>
-          <td>240,000</td>
+          <td class="row-total">240,000</td>
           <td>
-            <button class="md-btn md-text md-sm">حذف</button>
+            <button class="md-btn md-text md-sm"
+                    onclick="removeRow(this)">
+              حذف
+            </button>
           </td>
         </tr>
       </tbody>
@@ -78,9 +96,10 @@
       <tfoot>
         <tr>
           <td colspan="4" style="text-align:right;font-weight:bold;">
-            جمع کل سبد خرید
+            جمع کل
           </td>
-          <td colspan="2" style="font-weight:bold;">
+          <td colspan="2" id="cartTotal"
+              style="font-weight:bold;">
             390,000 تومان
           </td>
         </tr>
@@ -88,13 +107,20 @@
     </table>
   </div>
 
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:32px;flex-wrap:wrap;gap:12px;">
-    <a href="products.html" class="md-btn md-outlined md-md">
+  <div style="display:flex;
+              justify-content:space-between;
+              margin-top:32px;
+              flex-wrap:wrap;
+              gap:12px;">
+
+    <a href="products.html"
+       class="md-btn md-outlined md-md">
       ← ادامه خرید
     </a>
 
-    <button class="md-btn md-filled md-md">
-      ادامه فرایند پرداخت
+    <button id="checkoutBtn"
+            class="md-btn md-filled md-md md-round">
+      ادامه پرداخت
     </button>
   </div>
 
@@ -105,6 +131,54 @@
 <footer class="site-footer">
   © 2025 FoodEase
 </footer>
+
+<!-- ================= JavaScript ================= -->
+<script>
+  const cartTable = document.getElementById('cartTable');
+  const totalEl = document.getElementById('cartTotal');
+  const emptyMsg = document.getElementById('emptyCart');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+
+  function updateRow(input) {
+    const row = input.closest('tr');
+    const price = Number(row.dataset.price);
+    const qty = Number(input.value);
+    const rowTotal = price * qty;
+
+    row.querySelector('.row-total').textContent =
+      rowTotal.toLocaleString();
+
+    updateCartTotal();
+  }
+
+  function removeRow(btn) {
+    btn.closest('tr').remove();
+    updateCartTotal();
+  }
+
+  function updateCartTotal() {
+    const rows = cartTable.querySelectorAll('tbody tr');
+    let sum = 0;
+
+    rows.forEach(row => {
+      const qty = row.querySelector('input').value;
+      const price = row.dataset.price;
+      sum += qty * price;
+    });
+
+    if (rows.length === 0) {
+      emptyMsg.style.display = 'block';
+      cartTable.style.display = 'none';
+      checkoutBtn.disabled = true;
+      checkoutBtn.textContent = 'سبد خالی است';
+      return;
+    }
+
+    totalEl.textContent = sum.toLocaleString() + ' تومان';
+  }
+
+  updateCartTotal();
+</script>
 
 </body>
 </html>
