@@ -618,6 +618,7 @@ footer {
     accent-color: #FF385C;
 }
 
+
 /* ===== Icon Button ===== */
 .md-icon-btn {
   width: 40px;
@@ -654,7 +655,7 @@ footer {
 }
 
 /* ===== Checkbox & Radio ===== */
-
+.md-disabled
 .md-check,
 .md-radio {
   accent-color: var(--md-sys-color-primary);
@@ -687,19 +688,23 @@ footer {
 
 /* ===== Like Button Animation ===== */
 
-.like-btn .heart-icon {
-  font-size: 22px;
-  line-height: 1;
-  transition: transform 0.25s ease, color 0.25s ease;
+.like-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
 }
 
-.like-btn.liked .heart-icon {
-  color: #FF385C;
+.heart {
+  color: red;
+  transition: transform 0.2s;
 }
 
-.like-pop {
-  animation: pop 0.3s ease;
+.like-btn.liked .heart {
+  content: '♥';
+  transform: scale(1.2);
 }
+
 
 @keyframes pop {
   0%   { transform: scale(1); }

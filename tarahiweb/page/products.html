@@ -5,21 +5,87 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>منوی غذا - FoodEase</title>
 <link rel="stylesheet" href="../css/style.css">
-</head>
+<style>
+  /* فیلتر و جستجو */
+  .filter-bar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .filter-bar input, .filter-bar select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    min-width: 150px;
+  }
 
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 16px;
+  }
+
+  .product-card {
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s;
+  }
+  .product-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .product-card img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  .product-card .price {
+    font-weight: bold;
+    color: #000;
+  }
+
+  .md-btn.md-filled {
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* لینک به دسته و محصولات پرفروش */
+  .category-links, .featured-link {
+    margin-bottom: 12px;
+  }
+  .category-links a, .featured-link a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.2s;
+  }
+  .category-links a:hover, .featured-link a:hover {
+    color: #0056b3;
+  }
+</style>
+</head>
 <body class="light">
 
 <header class="site-header">
-  <div class="logo">
-    <img src="../image/logo.png" alt="FoodEase Logo">
-  </div>
-
+  <div class="logo"><img src="../image/logo.png" alt="FoodEase Logo"></div>
   <nav class="main-menu">
     <ul>
       <li><a href="index.html">صفحه اصلی</a></li>
       <li><a href="products.html" class="active">منوی غذا</a></li>
       <li><a href="cart.html">سبد خرید</a></li>
-      <li><a href="ma.html">درباره ما</a></li>
+      <li><a href="about.html">درباره ما</a></li>
       <li><a href="team.html">تیم ما</a></li>
       <li><a href="contact.html">تماس با ما</a></li>
     </ul>
@@ -27,64 +93,105 @@
 </header>
 
 <main>
+  <section style="padding: 20px;">
 
-  <section class="product-grid-section">
-    <h2 style="text-align:center;margin-bottom:24px;">منوی غذا</h2>
+    <!-- دسته بندی و محصولات پرفروش -->
+    <div class="featured-link">
+      <strong>محصولات پرفروش:</strong>
+      <a href="#" data-filter="featured">پیتزا مخصوص</a>
+      <a href="#" data-filter="featured">کباب ایرانی</a>
+    </div>
 
-    <div class="product-grid">
+    <div class="category-links">
+      <strong>دسته‌بندی:</strong>
+      <a href="#" data-category="pizza">پیتزا</a>
+      <a href="#" data-category="kebab">کباب</a>
+      <a href="#" data-category="salad">سالاد</a>
+      <a href="#" data-category="pasta">پاستا</a>
+    </div>
 
-      <!-- محصول 1 -->
-      <article class="md-card md-card-elevated product-card">
-        <img src="../image/pizza.jpg" alt="پیتزا مخصوص" class="product-img">
+    <!-- فیلتر و جستجو -->
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="جستجوی محصول..." />
+      <select id="sortSelect">
+        <option value="default">مرتب‌سازی پیش‌فرض</option>
+        <option value="price-asc">قیمت از کم به زیاد</option>
+        <option value="price-desc">قیمت از زیاد به کم</option>
+        <option value="name-asc">نام A-Z</option>
+        <option value="name-desc">نام Z-A</option>
+      </select>
+    </div>
+
+    <!-- گرید محصولات -->
+    <div class="product-grid" id="productGrid">
+
+      <!-- نمونه محصول -->
+      <article class="md-card md-card-elevated product-card" data-category="pizza" data-name="پیتزا مخصوص" data-price="150000">
+        <img src="../image/pizza.jpg" alt="پیتزا مخصوص">
         <h3>پیتزا مخصوص</h3>
-        <p>پیتزا با پنیر تازه، سس مخصوص و مواد درجه یک</p>
+        <p>پنیر تازه و سس مخصوص</p>
         <span class="price">150,000 تومان</span>
-        <a href="cart.html" class="md-btn md-filled md-md">
-          افزودن به سبد خرید
-        </a>
+        <a href="product-detail.html" class="md-btn md-filled">مشاهده محصول</a>
       </article>
 
-      <!-- محصول 2 -->
-      <article class="md-card md-card-elevated product-card">
-        <img src="../image/kebab.jpg" alt="کباب ایرانی" class="product-img">
+      <article class="md-card md-card-elevated product-card" data-category="kebab" data-name="کباب ایرانی" data-price="120000">
+        <img src="../image/kebab.jpg" alt="کباب ایرانی">
         <h3>کباب ایرانی</h3>
-        <p>گوشت تازه گوسفندی همراه با برنج ایرانی</p>
+        <p>گوشت تازه گوسفندی و برنج ایرانی</p>
         <span class="price">120,000 تومان</span>
-        <a href="cart.html" class="md-btn md-filled md-md">
-          افزودن به سبد خرید
-        </a>
+        <a href="product-detail.html" class="md-btn md-filled">مشاهده محصول</a>
       </article>
 
-      <!-- محصول 3 -->
-      <article class="md-card md-card-elevated product-card">
-        <img src="../image/salad.jpg" alt="سالاد فصل" class="product-img">
+      <article class="md-card md-card-elevated product-card" data-category="salad" data-name="سالاد فصل" data-price="50000">
+        <img src="../image/salad.webp" alt="سالاد فصل">
         <h3>سالاد فصل</h3>
-        <p>ترکیب سبزیجات تازه و سس خانگی</p>
+        <p>سبزیجات تازه و سس خانگی</p>
         <span class="price">50,000 تومان</span>
-        <a href="cart.html" class="md-btn md-filled md-md">
-          افزودن به سبد خرید
-        </a>
+        <a href="product-detail.html" class="md-btn md-filled">مشاهده محصول</a>
       </article>
 
-      <!-- محصول 4 -->
-      <article class="md-card md-card-elevated product-card">
-        <img src="../image/pasta.jpg" alt="پاستا مخصوص" class="product-img">
+      <article class="md-card md-card-elevated product-card" data-category="pasta" data-name="پاستا مخصوص" data-price="130000">
+        <img src="../image/pasta.jpg" alt="پاستا مخصوص">
         <h3>پاستا مخصوص</h3>
         <p>پاستا با سس مخصوص و مرغ گریل‌شده</p>
         <span class="price">130,000 تومان</span>
-        <a href="cart.html" class="md-btn md-filled md-md">
-          افزودن به سبد خرید
-        </a>
+        <a href="product-detail.html" class="md-btn md-filled">مشاهده محصول</a>
       </article>
 
     </div>
   </section>
-
 </main>
 
 <footer class="site-footer">
   © 2025 FoodEase
 </footer>
+
+<script>
+  // جستجو و فیلتر و مرتب‌سازی ساده با JS
+  const searchInput = document.getElementById('searchInput');
+  const sortSelect = document.getElementById('sortSelect');
+  const productGrid = document.getElementById('productGrid');
+  const products = Array.from(productGrid.children);
+
+  searchInput.addEventListener('input', () => {
+    const term = searchInput.value.trim();
+    products.forEach(p => {
+      const name = p.dataset.name;
+      p.style.display = name.includes(term) ? 'block' : 'none';
+    });
+  });
+
+  sortSelect.addEventListener('change', () => {
+    const val = sortSelect.value;
+    let sorted = [...products];
+    if(val === 'price-asc') sorted.sort((a,b)=> a.dataset.price - b.dataset.price);
+    if(val === 'price-desc') sorted.sort((a,b)=> b.dataset.price - a.dataset.price);
+    if(val === 'name-asc') sorted.sort((a,b)=> a.dataset.name.localeCompare(b.dataset.name));
+    if(val === 'name-desc') sorted.sort((a,b)=> b.dataset.name.localeCompare(a.dataset.name));
+    productGrid.innerHTML = '';
+    sorted.forEach(p=>productGrid.appendChild(p));
+  });
+</script>
 
 </body>
 </html>

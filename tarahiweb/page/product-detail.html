@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پیتزا مخصوص - FoodEase</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .product-detail { display: flex; flex-wrap: wrap; gap: 24px; margin: 20px; }
+  .product-images { flex: 1; min-width: 300px; }
+  .product-info { flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 12px; }
+
+  .product-info h2 { font-size: 1.6rem; margin-bottom: 8px; }
+  .product-info .price { font-weight: bold; font-size: 1.2rem; color: #000; }
+  .md-btn.md-filled { padding: 8px 12px; border-radius: 6px; background-color: #4caf50; color: #fff; text-decoration: none; }
+
+  /* ستاره های امتیازدهی */
+  .rating { display: inline-flex; gap:6px; user-select:none; }
+  .star-btn { background: none; border: none; cursor: pointer; }
+  .star-btn .star { width: 24px; height:24px; fill: none; stroke: #bdbdbd; stroke-width: 1.6; }
+  .star-btn.filled .star { fill: #f1c40f; stroke: #f39c12; }
+
+  /* محصولات مرتبط */
+  .related-products { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 16px; margin-top: 24px; }
+  .comment-section { margin-top:24px; }
+  .comment-section textarea { width: 100%; min-height: 80px; padding:6px; border-radius:6px; border:1px solid #ccc; }
+</style>
+</head>
+<body class="light">
+
+<header class="site-header">
+  <div class="logo"><img src="../image/logo.png" alt="FoodEase Logo"></div>
+  <nav class="main-menu">
+    <ul>
+      <li><a href="index.html">صفحه اصلی</a></li>
+      <li><a href="products.html" class="active">منوی غذا</a></li>
+      <li><a href="cart.html">سبد خرید</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="product-detail">
+    <!-- تصاویر محصول -->
+    <div class="product-images">
+      <img src="../image/pizza.jpg" alt="پیتزا مخصوص" style="width:100%; border-radius:6px;">
+    </div>
+
+    <!-- اطلاعات و خرید -->
+    <div class="product-info">
+      <h2>پیتزا مخصوص</h2>
+      <p class="price">150,000 تومان</p>
+      <div class="rating" data-rating="0">
+        <button class="star-btn" data-value="1"><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg></button>
+        <button class="star-btn" data-value="2"><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg></button>
+        <button class="star-btn" data-value="3"><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg></button>
+        <button class="star-btn" data-value="4"><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg></button>
+        <button class="star-btn" data-value="5"><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg></button>
+      </div>
+      <a href="cart.html" class="md-btn md-filled">افزودن به سبد خرید</a>
+
+      <p style="margin-top:12px;">توضیحات کامل محصول: پیتزا با پنیر تازه، مواد ویژه و سس مخصوص، تهیه‌شده با بهترین کیفیت.</p>
+    </div>
+  </section>
+
+  <!-- محصولات مرتبط -->
+  <section>
+    <h3>محصولات مرتبط</h3>
+    <div class="related-products">
+      <div class="md-card md-card-elevated product-card">
+        <img src="../image/pasta.jpg" alt="پاستا" style="width:100%; border-radius:6px;">
+        <h4>پاستا مخصوص</h4>
+        <span class="price">130,000 تومان</span>
+      </div>
+      <div class="md-card md-card-elevated product-card">
+        <img src="../image/salad.jpg" alt="سالاد" style="width:100%; border-radius:6px;">
+        <h4>سالاد فصل</h4>
+        <span class="price">50,000 تومان</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- بخش نظرات -->
+  <section class="comment-section">
+    <h3>نظرات کاربران</h3>
+    <textarea placeholder="نظر خود را بنویسید..."></textarea>
+    <button class="md-btn md-filled" style="margin-top:6px;">ثبت نظر</button>
+    <div style="margin-top:12px;">
+      <p><strong>کاربر 1:</strong> بسیار خوشمزه و تازه بود!</p>
+      <p><strong>کاربر 2:</strong> کیفیت عالی، پیشنهاد می‌کنم.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  © 2025 FoodEase
+</footer>
+
+<script src="../js/rating.js"></script>
+</body>
+</html>

@@ -25,7 +25,9 @@
   </nav>
 
   <!-- دکمه تغییر تم -->
-  <button id="themeToggle" class="md-icon-btn theme-toggle" aria-label="تغییر تم">🌙</button>
+  <button id="themeToggle" class="md-icon-btn theme-toggle" aria-label="تغییر تم">
+    ☀️
+  </button>
 </header>
 
 <main>
@@ -63,10 +65,11 @@
         <label for="terms">قوانین و شرایط سایت را می‌پذیرم</label>
       </div>
 
-      <div style="text-align:center;margin-top:24px;">
+     <div style="text-align:center;margin-top:24px;">
         <button id="registerBtn"
                 type="submit"
                 class="md-btn md-filled md-lg md-round md-disabled"
+                style="color:#ffffff;"
                 disabled>
           تکمیل ثبت‌نام
         </button>
@@ -74,7 +77,12 @@
 
       <p style="text-align:center;margin-top:12px;font-size:14px;">
         قبلاً حساب دارید؟
-        <a href="login.html" class="md-btn md-text md-sm">ورود</a>
+        <a id="loginLink"
+           href="login.html"
+           class="md-btn md-text md-sm"
+           style="color:#ff0000;">
+          ورود
+        </a>
       </p>
 
     </form>
@@ -85,8 +93,9 @@
   © 2025 FoodEase
 </footer>
 
-<!-- فراخوانی فایل JS خارجی -->
+<!-- فایل‌های JS خارجی -->
 <script src="../js/register.js"></script>
+<script src="../js/theme.js"></script>
 
 </body>
 </html>

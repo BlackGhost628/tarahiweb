@@ -1,29 +1,19 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const likeButtons = document.querySelectorAll(".like-btn");
+document.addEventListener('DOMContentLoaded', () => {
+  const likeButtons = document.querySelectorAll('.like-btn');
 
-  likeButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const icon = btn.querySelector(".heart-icon");
-      const liked = icon.dataset.liked === "true";
+  likeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const liked = button.getAttribute('data-liked') === 'true';
 
-      if (liked) {
-        icon.textContent = "♡";
-        icon.dataset.liked = "false";
-        btn.classList.remove("liked");
+      if (!liked) {
+        button.textContent = '♥';
+        button.setAttribute('data-liked', 'true');
+        button.classList.add('liked');
       } else {
-        icon.textContent = "♥";
-        icon.dataset.liked = "true";
-        btn.classList.add("liked");
-        playLikeAnimation(btn);
+        button.textContent = '♡';
+        button.setAttribute('data-liked', 'false');
+        button.classList.remove('liked');
       }
     });
   });
-
-  function playLikeAnimation(button) {
-    button.classList.add("like-pop");
-    setTimeout(() => {
-      button.classList.remove("like-pop");
-    }, 300);
-  }
 });
-
